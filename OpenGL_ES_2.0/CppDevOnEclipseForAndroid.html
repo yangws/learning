@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>index.md</title>
+<title>CppDevOnEclipseForAndroid.md</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 body{
@@ -266,33 +266,51 @@ button::-moz-focus-inner {
 </style>
 </head>
 <body>
-<h1>Learning OpenGL ES 2.0 Overview</h1>
+<h1>用Eclipse为Android开发C++程序</h1>
 
-<h2>相关资源</h2>
+<h2><strong>搭建开发环境</strong></h2>
 
 <ol>
-<li>示例代码使用Eclipse环境为Android平台编写，其中使用了PVRTools的源码，需要Android4.1以上版本的SDK来编译。
-<ul>
-<li>示例代码仓库：<strong>https://github.com/IdVincentYang/OpenGL<em>ES2</em>Samples.git</strong></li>
-</ul></li>
-<li>参考的文档资料<a href="http://www.kuaipan.cn/file/id_120512221070491937.htm">点此下载</a>
-<ul>
-<li><a href="http://www.khronos.org/registry/gles/">点此进入官方网站</a></li>
-<li><a href="http://www.khronos.org/opengles/sdk/docs/man/">点此打开官方OpenGL ES 2.0在线API文档</a></li>
-</ul></li>
+<li>从<a href="http://developer.android.com/sdk/index.html">Andrdoid官方网站下载最新的SDK</a>，解压到指定的目录，注意<strong>目录路径中不要有中文字符和空格，建议不要解压到系统盘</strong>。</li>
+<li>从<a href="http://developer.android.com/tools/sdk/ndk/index.html">Android官方网站下载最新的NDK</a>，解压到指定目录，建议解压到SDK的adt-bundle目录下。</li>
+<li>打开Eclipse，在菜单Windows->Preferences界面的Android->NDK设置项中设置正确的NDK路径。<img src="images/eclipse_set_ndk_path.jpg" alt="" title="Eclipse中设置NDK路径" /></li>
 </ol>
 
-<h2>目录</h2>
+<h2><strong>编写一个HelloCpp程序</strong></h2>
 
 <ol>
-<li><a href="http://www.kuaipan.cn/file/id_120512221070492052.htm">初识OpenGL ES 2.0</a></li>
-<li><a href="http://www.kuaipan.cn/file/id_120512221070492053.htm">HelloOpenGLES2</a></li>
+<li>点击<em>File->New->Android Application Project</em>新建一个Android工程HelloCpp,只输入application Name为"HelloCpp"一路Next就可以。
+<img src="images/eclipse_new_project.jpg" alt="" title="Eclipse中新建立的Android Application Project" /></li>
+<li>在工程右键菜单中选择<em>Debug As...->Android Application</em>，在模拟器运行，显示一个"Hello world!"。
+<img src="images/eclipse_new_project_run.jpg" alt="" title="Eclipse新建工程运行结果" /></li>
+<li>接下来用C++代码实现一个函数，返回一个字符串为"Hello cpp!"，并用这个字符串替换"Hello world!"。首先<em>给工程添加C++代码支持</em>，在工程右键菜单中选择<em>Android Tools->Add Native Support...</em>
+<img src="images/eclipse_select_add_ndk_support.jpg" alt="" title="Eclipse工程右键菜单选择add NDK Support..." />
+<img src="images/eclipse_name_native_library.jpg" alt="" title="Eclipse工程添加NDK支持时给将要添加的包含C++代码的动态库命名" />
+<img src="images/eclipse_new_project_with_ndk_support.jpg" alt="" title="Eclipse工程添加NDK支持后的空白C++源码文件" /></li>
+<li>在Java代码中添加载入C++代码动态库的代码，并添加一个需要C++实现的naticve函数。
+<img src="images/eclipse_java_add_native_method.jpg" alt="" title="Eclipsejava代码调用C++动态库，并添加需要C++实现的函数" /></li>
+<li>调用JDK的javah工具生成需要C++实现的native函数的头文件，刷新一下工程。
+<code>
+javah -verbose -jni -classpath "${project_loc}/bin/classes;" -d "${project_loc}/jni" "com.example.hellocpp.MainActivity.java"
+</code>
+<img src="images/eclipse_javah_gen_header.jpg" alt="" title="使用Javah工具生成native函数的C++头文件" /></li>
+<li>在C++源码文件中实现native函数。
+<img src="images/eclipse_impl_native_method.jpg" alt="" title="用C++代码实现native函数" /></li>
+<li>在Java代码中调用Native函数获取字符串并设置到界面上,编译并运行程序。
+<img src="images/eclipse_java_call_native.jpg" alt="" title="Java代码调用C++代码获取字符串并设置到界面上" />
+<img src="images/eclipse_show_hello_cpp.jpg" alt="" title="C++函数返回的字符串显示在界面上" /></li>
 </ol>
 
-<h2>附录</h2>
+<h2><strong>小技巧</strong></h2>
 
 <ol>
-<li><a href="CppDevOnEclipseForAndroid.html">用Eclipse为Android开发C++程序</a></li>
+<li>如果在NDK编译时遇到错误： <em>Android NDK: WARNING: APP</em>PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    HelloCpp_，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
+<code>
+APP_PLATFORM := android-8
+</code></li>
+<li>在Intel CPU的机器上使用硬件加速提高模拟器运行速度。
+<img src="images/asm_install_x86_emu.jpg" alt="用Android SDK Manager安装最新的SDK版本的x86 system Image 和 Intel的硬件加速支持软件" />
+<img src="images/avd_emu_enable_hard_acc.jpg" alt="用AVD建立模拟器时选择x86的ABI" /></li>
 </ol>
 
 </body>

@@ -12,4 +12,4 @@
 1. [HelloOpenGLES2](http://www.kuaipan.cn/file/id_120512221070492053.htm)
 
 ## 附录
-1. 用Eclipse为Android开发C++程序（未完成）
+1. [用Eclipse为Android开发C++程序](CppDevOnEclipseForAndroid.html)
