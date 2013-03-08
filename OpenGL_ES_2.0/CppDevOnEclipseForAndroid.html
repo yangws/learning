@@ -304,11 +304,11 @@ javah -verbose -jni -classpath "${project_loc}/bin/classes;" -d "${project_loc}/
 <h2><strong>小技巧</strong></h2>
 
 <ol>
-<li>如果在NDK编译时遇到错误： <em>Android NDK: WARNING: APP</em>PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    HelloCpp_，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
+<li>如果在NDK编译时遇到错误： <strong>Android NDK: WARNING: APP_PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml   HelloCpp</strong>，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
 <code>
 APP_PLATFORM := android-8
 </code></li>
-<li>在Intel CPU的机器上使用硬件加速提高模拟器运行速度。
+<li>在Intel CPU的机器上使用<strong>硬件加速</strong>提高模拟器运行速度。
 <img src="images/asm_install_x86_emu.jpg" alt="用Android SDK Manager安装最新的SDK版本的x86 system Image 和 Intel的硬件加速支持软件" />
 <img src="images/avd_emu_enable_hard_acc.jpg" alt="用AVD建立模拟器时选择x86的ABI" /></li>
 </ol>

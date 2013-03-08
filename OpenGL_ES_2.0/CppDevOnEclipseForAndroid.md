@@ -28,11 +28,11 @@
 ![][img_27.2]
 
 ## __小技巧__
-1. 如果在NDK编译时遇到错误： _Android NDK: WARNING: APP_PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml	HelloCpp_，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
+1. 如果在NDK编译时遇到错误： __Android NDK: WARNING: APP_PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml	HelloCpp__，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
 ```
 APP_PLATFORM := android-8
 ```
-2. 在Intel CPU的机器上使用硬件加速提高模拟器运行速度。
+2. 在Intel CPU的机器上使用__硬件加速__提高模拟器运行速度。
 ![用Android SDK Manager安装最新的SDK版本的x86 system Image 和 Intel的硬件加速支持软件][img_a21]
 ![用AVD建立模拟器时选择x86的ABI][img_a22]
 
