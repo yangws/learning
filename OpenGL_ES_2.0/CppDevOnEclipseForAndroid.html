@@ -268,6 +268,14 @@ button::-moz-focus-inner {
 <body>
 <h1>用Eclipse为Android开发C++程序</h1>
 
+<ul>
+<li><a href="#environment">搭建开发环境</a></li>
+<li><a href="#hellocpp">编写一个HelloCpp程序</a></li>
+<li><a href="#tips">小技巧</a></li>
+</ul>
+
+<p><h2 id="environment"/></p>
+
 <h2><strong>搭建开发环境</strong></h2>
 
 <ol>
@@ -275,6 +283,8 @@ button::-moz-focus-inner {
 <li>从<a href="http://developer.android.com/tools/sdk/ndk/index.html">Android官方网站下载最新的NDK</a>，解压到指定目录，建议解压到SDK的adt-bundle目录下。</li>
 <li>打开Eclipse，在菜单Windows->Preferences界面的Android->NDK设置项中设置正确的NDK路径。<img src="images/eclipse_set_ndk_path.jpg" alt="" title="Eclipse中设置NDK路径" /></li>
 </ol>
+
+<p><h2 id="hellocpp"/></p>
 
 <h2><strong>编写一个HelloCpp程序</strong></h2>
 
@@ -300,6 +310,8 @@ javah -verbose -jni -classpath "${project_loc}/bin/classes;" -d "${project_loc}/
 <img src="images/eclipse_java_call_native.jpg" alt="" title="Java代码调用C++代码获取字符串并设置到界面上" />
 <img src="images/eclipse_show_hello_cpp.jpg" alt="" title="C++函数返回的字符串显示在界面上" /></li>
 </ol>
+
+<p><h2 id="tips"/></p>
 
 <h2><strong>小技巧</strong></h2>
 

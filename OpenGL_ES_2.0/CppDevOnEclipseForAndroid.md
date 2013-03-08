@@ -1,10 +1,16 @@
 # 用Eclipse为Android开发C++程序
 
+* [搭建开发环境](#environment)
+* [编写一个HelloCpp程序](#hellocpp)
+* [小技巧](#tips)
+
+<h2 id="environment"/>
 ## __搭建开发环境__
 1. 从[Andrdoid官方网站下载最新的SDK](http://developer.android.com/sdk/index.html)，解压到指定的目录，注意__目录路径中不要有中文字符和空格，建议不要解压到系统盘__。
 2. 从[Android官方网站下载最新的NDK](http://developer.android.com/tools/sdk/ndk/index.html)，解压到指定目录，建议解压到SDK的adt-bundle目录下。
 3. 打开Eclipse，在菜单Windows->Preferences界面的Android->NDK设置项中设置正确的NDK路径。![][img_13.1]
 
+<h2 id="hellocpp"/>
 ## __编写一个HelloCpp程序__
 1. 点击_File->New->Android Application Project_新建一个Android工程HelloCpp,只输入application Name为"HelloCpp"一路Next就可以。
 ![][img_21.1]
@@ -27,6 +33,7 @@
 ![][img_27.1]
 ![][img_27.2]
 
+<h2 id="tips"/>
 ## __小技巧__
 1. 如果在NDK编译时遇到错误： __Android NDK: WARNING: APP_PLATFORM android-14 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml	HelloCpp__，可以在jni目录下新建Application.mk文件，然后添加如下一行代码解决。
 ```
