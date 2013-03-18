@@ -10,6 +10,7 @@
 ## 目录
 0. [初识OpenGL ES 2.0](http://www.kuaipan.cn/file/id_120512221070492052.htm)
 1. [HelloOpenGLES2](http://www.kuaipan.cn/file/id_120512221070492053.htm)
+2. [Primitive Assembly(图元组装)](http://www.kuaipan.cn/file/id_120512221070492063.htm)
 
 ## 附录
 1. [用Eclipse为Android开发C++程序](CppDevOnEclipseForAndroid.html)
