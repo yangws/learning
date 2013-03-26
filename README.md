@@ -1,5 +1,3 @@
-# Welcome to Learning Corner.
-
 # 关于本网站
 
     此网站使用[GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)来编写（除具体内容之外）.
