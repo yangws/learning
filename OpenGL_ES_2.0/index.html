@@ -273,7 +273,12 @@ button::-moz-focus-inner {
 <ol>
 <li>示例代码使用Eclipse环境为Android平台编写，其中使用了PVRTools的源码，需要Android4.1以上版本的SDK来编译。
 <ul>
-<li>示例代码仓库：<strong>https://github.com/IdVincentYang/OpenGL<em>ES2</em>Samples.git</strong></li>
+<li>示例代码仓库：<strong>https://github.com/IdVincentYang/OpenGL<em>ES2</em>Samples.git</strong>
+<ul>
+<li>使用<strong>File->Import...->Android->Import Android Project From existing Source...</strong></li>
+<li>设置<strong>SampleFundation</strong>为库工程，每个示例工程需要依赖SampleFundation</li>
+<li>工程C++代码默认指定<strong>x86</strong>ABI，如要在ARM架构上运行，请在<strong>每个工程的jni/Applicaion.mk</strong>中指定ABI为<strong>armeabi</strong></li>
+</ul></li>
 </ul></li>
 <li>参考的文档资料<a href="http://www.kuaipan.cn/file/id_120512221070491937.htm">点此下载</a>
 <ul>
@@ -287,12 +292,13 @@ button::-moz-focus-inner {
 <ol>
 <li><a href="http://www.kuaipan.cn/file/id_120512221070492052.htm">初识OpenGL ES 2.0</a></li>
 <li><a href="http://www.kuaipan.cn/file/id_120512221070492053.htm">HelloOpenGLES2</a></li>
+<li><a href="http://www.kuaipan.cn/file/id_120512221070492063.htm">Primitive Assembly(图元组装)</a></li>
 </ol>
 
 <h2>附录</h2>
 
 <ol>
-<li><a href="CppDevOnEclipseForAndroid.html">用Eclipse为Android开发C++程序</a></li>
+<li><a href="http://yangws.github.com/yong-eclipsewei-androidkai-fa-ccheng-xu.html">用Eclipse为Android开发C++程序</a></li>
 </ol>
 
 </body>
