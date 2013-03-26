@@ -1,7 +1,8 @@
 # 关于本网站
 
-    此网站使用[GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)来编写（除具体内容之外）.
-    可以通过以下git命令得到所有的页面:
+* 此网站使用[GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)来编写（除具体内容之外）.
+* 可以通过以下git命令得到所有的页面:
+
 ```
     $ git clone https://github.com/yangws/learning.git
     $ git checkout -b gh-pages origin/gh-pages
