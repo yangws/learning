@@ -11,9 +11,9 @@
     * [点此打开官方OpenGL ES 2.0在线API文档](http://www.khronos.org/opengles/sdk/docs/man/)
 
 ## 目录
-0. [初识OpenGL ES 2.0](http://www.kuaipan.cn/file/id_120512221070492052.htm)
-1. [HelloOpenGLES2](http://www.kuaipan.cn/file/id_120512221070492053.htm)
-2. [Primitive Assembly(图元组装)](http://www.kuaipan.cn/file/id_120512221070492063.htm)
+0. [初识OpenGL ES 2.0](00_OpenGLES2.pdf)
+1. [HelloOpenGLES2](01_HelloOpenGLES2.pdf)
+2. [Primitive Assembly(图元组装)](02_PrimitiveAssembly.pdf)
 
 ## 附录
 1. [用Eclipse为Android开发C++程序](http://yangws.github.com/yong-eclipsewei-androidkai-fa-ccheng-xu.html)
