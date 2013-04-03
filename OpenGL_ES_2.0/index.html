@@ -277,12 +277,12 @@ button::-moz-focus-inner {
 <ul>
 <li>使用<strong>File->Import...->Android->Import Android Project From existing Source...</strong></li>
 <li>设置<strong>SampleFundation</strong>为库工程，每个示例工程需要依赖SampleFundation</li>
-<li>工程C++代码默认指定<strong>x86</strong>ABI，如要在ARM架构上运行，请在<strong>每个工程的jni/Applicaion.mk</strong>中指定ABI为<strong>armeabi</strong></li>
+<li>工程C++代码有的依赖<strong>PowerVR</strong>的库来载入纹理，请尽量使用<strong>X86</strong>模拟器来运行，如果要真机运行，需要硬件支持PowerVR纹理。</li>
 </ul></li>
 </ul></li>
 <li>参考的文档资料<a href="http://www.kuaipan.cn/file/id_120512221070491937.htm">点此下载</a>
 <ul>
-<li><a href="http://www.khronos.org/registry/gles/">点此进入官方网站</a></li>
+<li><a href="http://www.khronos.org/registry/gles/">点此进入OpenGL ES官方网站</a></li>
 <li><a href="http://www.khronos.org/opengles/sdk/docs/man/">点此打开官方OpenGL ES 2.0在线API文档</a></li>
 </ul></li>
 </ol>

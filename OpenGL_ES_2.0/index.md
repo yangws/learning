@@ -5,9 +5,9 @@
 	* 示例代码仓库：__https://github.com/IdVincentYang/OpenGL_ES2_Samples.git__
     	* 使用__File->Import...->Android->Import Android Project From existing Source...__
         * 设置__SampleFundation__为库工程，每个示例工程需要依赖SampleFundation
-        * 工程C++代码默认指定__x86__ABI，如要在ARM架构上运行，请在__每个工程的jni/Applicaion.mk__中指定ABI为__armeabi__
+        * 工程C++代码有的依赖__PowerVR__的库来载入纹理，请尽量使用__X86__模拟器来运行，如果要真机运行，需要硬件支持PowerVR纹理。
 2. 参考的文档资料[点此下载](http://www.kuaipan.cn/file/id_120512221070491937.htm)
-    * [点此进入官方网站](http://www.khronos.org/registry/gles/)
+    * [点此进入OpenGL ES官方网站](http://www.khronos.org/registry/gles/)
     * [点此打开官方OpenGL ES 2.0在线API文档](http://www.khronos.org/opengles/sdk/docs/man/)
 
 ## 目录
