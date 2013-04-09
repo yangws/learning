@@ -22,6 +22,7 @@
 1. [OpenGL ES 2.0](OpenGL_ES_2.0/index.html) ------ Authored by Wensheng Yang (@yangws)
 2. [Shell Programing](Shell/index.html) ------ Authored by Hexuan Li (@lihe757)
 3. [Python Programing](Python/index.html) ------ Authored by Hujiang (@hujiang)
+4. [Android Development](AndroidDev/index.html) ------ Authored by Honghui Zhang (@honghui)
 4. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
 # 如何编写页面?
