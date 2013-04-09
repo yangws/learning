@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="forProperty" default="debug">
+    <loadproperties srcFile="proFile2.properties" />
+    <property file="proFile1.properties" />
+    
+    <property name="pro1" value="property one" />
+
+    <target name="step1">
+        <echo>pro1 value in step1 is : ${pro1}</echo>
+        <property name="pro1" value="property one after step1" />
+    </target>
+
+    <target name="step2" depends="step1">
+        <echo>pro1 value in step2 is : ${pro1}</echo>
+    </target>
+    
+    <target name="debug" depends="step1,step2">
+        <echo>Target debug</echo>
+    </target>
+</project>
