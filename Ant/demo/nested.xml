@@ -1,0 +1,9 @@
+<project>
+  <target name="setUp">
+    <property name="prop" value="in nested"/>
+  </target>
+
+  <target name="echo" depends="setUp">
+    <echo>prop has the value ${prop}</echo>
+  </target>
+</project>
