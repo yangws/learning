@@ -1,0 +1,9 @@
+<project default="test">
+  <target name="setUp">
+    <property name="prop" value="in importing"/>
+  </target>
+
+  <import file="nested.xml" as="nested"/>
+
+  <target name="test" depends="nested.echo"/>
+</project>
