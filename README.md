@@ -18,6 +18,8 @@
 6. [服务端的方方面面](ServerPrograming/index.html) ------ Authored by Zhidao Hong (@fathong)
 99. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
+* [大家感兴趣的主题统计](https://docs.google.com/spreadsheet/ccc?key=0ApdZ593X8vw3dHoyYVVmZmlaOEhXZG9TOVNzNFdhZXc&usp=sharing)
+
 # 时间安排
 
 <iframe src="https://www.google.com/calendar/embed?showNav=0&amp;showDate=0&amp;showTz=0&amp;height=400&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=Asia%2FShanghai" style=" border:solid 1px #777 " width="800" height="400" frameborder="0" scrolling="no"></iframe>
