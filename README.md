@@ -24,7 +24,8 @@
 3. [Python Programing](Python/index.html) ------ Authored by Hujiang (@hujiang)
 4. [Android Development](AndroidDev/index.html) ------ Authored by Honghui Zhang (@honghui)
 5. [Apache Ant](Ant/index.html) ------ Authored by Zhang Bin (@zhangbin)
-6. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
+6. [服务端的方方面面](ServerPrograming/index.html) ------ Authored by Zhidao Hong (@fathong)
+99. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
 # 如何编写页面?
 
