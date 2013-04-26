@@ -16,6 +16,7 @@
 4. [Android Development](AndroidDev/index.html) ------ Authored by Honghui Zhang (@honghui)
 5. [Apache Ant](Ant/index.html) ------ Authored by Zhang Bin (@zhangbin)
 6. [服务端的方方面面](ServerPrograming/index.html) ------ Authored by Zhidao Hong (@fathong)
+7. [Cocosbuilder3.0使用分享](CocosBuilder/CocosBuilderLearning.md) ------ Authored by Jianhua Chen (@dumganhar)
 99. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
 * [大家感兴趣的主题统计](https://docs.google.com/spreadsheet/ccc?key=0ApdZ593X8vw3dHoyYVVmZmlaOEhXZG9TOVNzNFdhZXc&usp=sharing)
