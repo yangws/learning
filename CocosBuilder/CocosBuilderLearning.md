@@ -12,8 +12,14 @@ Cocosbuilder3.0使用分享
     	* 选中对应的ccb
         * 点击Document，去掉js controlled前的勾
     * 填写对应的Custom class名称，用于自定义layer的加载，具体见registerCCNodeLoader
-    * 如何添加Menu，CCControlButton事件响应
+    * 初始化成员变量和自定义属性，CCBMemberVariableAssigner
+    * 如何添加Menu，CCControlButton事件响应, 实现CCBSelectorResolver
 * 编写对应的Loader和Layer文件
+	* Loader的作用:
+    <pre>
+        CCNodeLoader *ccNodeLoader = this->mCCNodeLoaderLibrary->getCCNodeLoader(className.c_str());
+        CCNode *node = ccNodeLoader->loadCCNode(pParent, this);
+    </pre>
 * 修改编辑ccb的分辨率，默认为iphone，演示如何改为ipad: Document -> Resolution
 
 多分辨率适配
