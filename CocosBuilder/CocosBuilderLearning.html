@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>index.md</title>
+<title>CocosBuilderLearning.md</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 body{
@@ -266,41 +266,53 @@ button::-moz-focus-inner {
 </style>
 </head>
 <body>
-<h1>Learning OpenGL ES 2.0 Overview</h1>
+<h1>Cocosbuilder3.0使用分享</h1>
 
-<h2>相关资源</h2>
+<h2>在CPP工程中如何使用Cocosbuilder</h2>
 
-<ol>
-<li>示例代码使用Eclipse环境为Android平台编写，其中使用了PVRTools的源码，需要Android4.1以上版本的SDK来编译。
 <ul>
-<li>示例代码仓库：<strong>https://github.com/IdVincentYang/OpenGL<em>ES2</em>Samples.git</strong>
+<li>创建一个Cocobuilder工程
 <ul>
-<li>使用<strong>File->Import...->Android->Import Android Project From existing Source...</strong></li>
-<li>设置<strong>SampleFundation</strong>为库工程，每个示例工程需要依赖SampleFundation</li>
-<li>工程C++代码有的依赖<strong>PowerVR</strong>的库来载入纹理，请尽量使用<strong>X86</strong>模拟器来运行，如果要真机运行，需要硬件支持PowerVR纹理。</li>
-</ul></li>
-</ul></li>
-<li>参考的文档资料<a href="http://www.kuaipan.cn/file/id_120512221070491937.htm">点此下载</a>
+<li>resources-auto为publish时能够自动缩放的资源目录，所以资源只需要最大的那一套，
+比如iOS上使用ipad-hd(4x)，android上使用xlarge(4x),
+需要注意的是，在publish setting里面需要选择<code>Automatic scaling from: 4x</code></li>
+<li>在Appdelegate.cpp中添加searchPaths和resourceOrders</li>
+<li>创建出来的layer默认是js controlled，需要取消js controlled，即转换为cpp controlled, 方法如下
 <ul>
-<li><a href="http://www.khronos.org/registry/gles/">点此进入OpenGL ES官方网站</a></li>
-<li><a href="http://www.khronos.org/opengles/sdk/docs/man/">点此打开官方OpenGL ES 2.0在线API文档</a></li>
+<li>选中对应的ccb</li>
+<li>点击Document，去掉js controlled前的勾</li>
 </ul></li>
-</ol>
+<li>填写对应的Custom class名称，用于自定义layer的加载，具体见registerCCNodeLoader</li>
+<li>初始化成员变量和自定义属性，CCBMemberVariableAssigner</li>
+<li>如何添加Menu，CCControlButton事件响应, 实现CCBSelectorResolver</li>
+</ul></li>
+<li>编写对应的Loader和Layer文件
+<ul>
+<li>Loader的作用:
+<pre>
+CCNodeLoader *ccNodeLoader = this->mCCNodeLoaderLibrary->getCCNodeLoader(className.c_str());
+CCNode *node = ccNodeLoader->loadCCNode(pParent, this);
+</pre></li>
+</ul></li>
+<li>修改编辑ccb的分辨率，默认为iphone，演示如何改为ipad: Document -> Resolution</li>
+</ul>
 
-<h2>目录</h2>
+<h2>多分辨率适配</h2>
 
-<ol>
-<li><a href="00_OpenGLES2.pdf">初识OpenGL ES 2.0</a></li>
-<li><a href="01_HelloOpenGLES2.pdf">HelloOpenGLES2</a></li>
-<li><a href="02_PrimitiveAssembly.pdf">Primitive Assembly(图元组装)</a></li>
-<li><a href="03_Texturing.pdf">Texturing(纹理贴图)</a></li>
-</ol>
+<ul>
+<li>选择资源，以大套资源为准</li>
+<li>五种相对坐标布局(<em>topleft</em>, <em>rightleft</em>, <em>bottomleft</em>, <em>bottomright</em>, <em>percent</em>)</li>
+<li>如何使用设置Design Resolution使游戏全屏</li>
+<li>如何导出不同分辨率的资源</li>
+</ul>
 
-<h2>附录</h2>
+<h2>如何编辑动画Timeline</h2>
 
-<ol>
-<li><a href="http://yangws.github.com/yong-eclipsewei-androidkai-fa-ccheng-xu.html">用Eclipse为Android开发C++程序</a></li>
-</ol>
+<h2>在动画中添加回调和音效支持</h2>
+
+<h2>在JSB工程中如何使用Cocosbuilder</h2>
+
+<h2>如何为CocosBuilder添加plugin</h2>
 
 </body>
 </html>

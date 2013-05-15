@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="debug">
+
+    <target name="step1">
+        <echo>Target step1</echo>
+    </target>
+
+    <target name="step2" depends="step1">
+        <echo>Target step2 mine</echo>
+    </target>
+    
+    <target name="debug" depends="step1,step2">
+        <echo>Target debug</echo>
+    </target>
+</project>

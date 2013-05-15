@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="forExec" default="debug">
+
+    <target name="debug">
+        <exec executable="bash" failonerror="true">
+            <arg value="executable.sh"/>
+            <arg value="2"/>
+        </exec>
+
+        <exec command="bash executable.sh 1" />
+    </target>
+</project>
