@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Learning Apache Ant</title>
+
+</head>
+<body>
+<h1>Learning Apache Ant</h1>
+
+<h2>目录</h2>
+
+<ul>
+<li><a href="#ach1">Ant 简介</a></li>
+<li><a href="#ach2">Ant 构建文件</a></li>
+<li><a href="#ach3">Ant 命令参数</a></li>
+<li><a href="#ach4">Ant 开发</a>
+
+<ul>
+<li><a href="#ach4_1">project</a></li>
+<li><a href="#ach4_2">target</a></li>
+<li><a href="#ach4_3">tasks</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2><a id="ach1"></a>Ant 简介</h2>
+
+<ul>
+<li><a href="http://ant.apache.org/">Apache Ant 官方网站</a></li>
+<li>Apache Ant,是一个将软件编译、测试、部署等步骤联系在一起加以自动化的一个工具，大多用于Java环境中的软件开发。</li>
+<li>参考文档：<a href="ant.pdf">ant 中文手册</a></li>
+</ul>
+
+
+<h2><a id="ach2"></a>Ant 构建文件</h2>
+
+<p>构建文件，即开发者需要编写的 xml 配置文件，Ant 工具对构建文件进行解析完成开发者定义的自动化步骤。默认的构建文件为 build.xml。</p>
+
+<h2><a id="ach3"></a>Ant 命令参数</h2>
+
+<ul>
+<li>ant 命令格式：ant [script options] [options] [target [target2 [target3] ..]]</li>
+<li>可以使用 ant -help 查看具体的参数说明。常用 options 参数：
+
+<ul>
+<li><em><strong>-q</strong></em> 简略输出的 log。</li>
+<li><em><strong>-d</strong></em> 输出 debug 信息。</li>
+<li><em><strong>-buildfile</strong></em> <em><strong>-file</strong></em> <em><strong>-f</strong></em> 指定构建文件。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2><a id="ach4"></a>Ant 开发</h2>
+
+<p>主要工作就是构建文件的编写，主要的组成部分以及说明：</p>
+
+<h3><a id="ach4_1"></a>project</h3>
+
+<p>每个构建文件对应一个项目。各个属性的含义分别如下：</p>
+
+<ul>
+<li><em><strong>default</strong></em> 表示默认的运行目标，即指定默认的target（即任务）。这个属性是必须的。</li>
+<li><em><strong>basedir</strong></em> 表示项目的基准目录。</li>
+<li><em><strong>name</strong></em> 表示项目名。</li>
+</ul>
+
+
+<h3><a id="ach4_2"></a>target</h3>
+
+<p>一个项目下可以有一个或多个target。一个target标签可以依赖其他的target标签。Target的主要属性如下：</p>
+
+<ul>
+<li><em><strong>name</strong></em> 表示target的名称，这个属性是必须的。</li>
+<li><em><strong>depends</strong></em> 表示依赖的target。</li>
+<li><em><strong>if</strong></em> 表示仅当属性设置时才执行。</li>
+<li><em><strong>unless</strong></em> 表示当属性没有设置时才执行。</li>
+<li><em><strong>description</strong></em> 表示target的描述。</li>
+</ul>
+
+
+<p><strong>Ant会依照depends属性中target出现顺序依次执行每个target。在执行之前，首先需要执行它所依赖的target。一个target只能被执行一次，即使有多个target依赖于它。</strong></p>
+
+<h3><a id="ach4_3"></a>tasks</h3>
+
+<ol>
+<li>property<br/>
+ 可以理解为常量，值不可变。定义 properties 的方式有两种：
+
+<ul>
+<li><code>&lt;property name="sampleName" value="sampleValue" /&gt;</code></li>
+<li>使用 Property 文件定义 properties，然后在构建文件中加载 Property 文件。<br/>
+<code>&lt;property file="ant.properties" /&gt;</code> 或者 <code>&lt;loadproperties srcFile="project.properties" /&gt;</code></li>
+</ul>
+
+
+<p> 通过 ${property name} 使用 property。</p></li>
+<li><p>import<br/>
+ 引入其他的 xml 构建文件。主要属性：</p>
+
+<ul>
+<li><em><strong>file</strong></em> 需要引入的 xml 文件。<strong>必要属性</strong></li>
+<li><em><strong>optional</strong></em> 是否可选的 import，默认值为 false。</li>
+</ul>
+</li>
+<li><p>exec<br/>
+ 调用系统命令。主要属性：</p>
+
+<ul>
+<li><em><strong>command</strong></em> 执行的命令行以及参数。</li>
+<li><em><strong>executable</strong></em> 执行的命令，不包含参数。参数使用 &lt;arg> 子标签指定。</li>
+<li><em><strong>failonerror</strong></em> 命令执行报错时是否认为 ant 执行失败，默认为 false。</li>
+</ul>
+</li>
+<li><a href="http://ant.apache.org/manual/tasklist.html">更多的 tasks</a></li>
+<li>可以自定义 task。<a href="http://ant.apache.org/manual/develop.html#writingowntask">点击查看</a></li>
+</ol>
+
+</body>
+</html>
