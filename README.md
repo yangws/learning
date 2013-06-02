@@ -24,7 +24,7 @@
 
 # 时间安排
 
-<iframe src="https://www.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=en.china%23holiday%40group.v.calendar.google.com&amp;color=%23060D5E&amp;ctz=Asia%2FShanghai" style=" border-width:0 " width="800" height="400" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://www.google.com/calendar/embed?src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&ctz=Asia/Shanghai" style="border: 0" width="800" height="400" frameborder="0" scrolling="no"></iframe>
 
 * 日历网址:
 	* __xml__: https://www.google.com/calendar/feeds/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic
