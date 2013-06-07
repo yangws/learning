@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Learn-travis-ci.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+body{
+    margin: 0 auto;
+    font-family: Georgia, Palatino, serif;
+    color: #444444;
+    line-height: 1;
+    max-width: 960px;
+    padding: 5px;
+}
+h1, h2, h3, h4 {
+    color: #111111;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, p {
+    margin-bottom: 16px;
+    padding: 0;
+}
+h1 {
+    font-size: 28px;
+}
+h2 {
+    font-size: 22px;
+    margin: 20px 0 6px;
+}
+h3 {
+    font-size: 21px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+a {
+    color: #0099ff;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: none;
+    color: #ff6600;
+}
+a:visited {
+    color: purple;
+}
+ul, ol {
+    padding: 0;
+    margin: 0;
+}
+li {
+    line-height: 24px;
+    margin-left: 44px;
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+p, ul, ol {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 540px;
+}
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 2em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+    font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+button, input {
+  line-height: normal;
+  *overflow: visible;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+}
+/* override default chrome & firefox settings */
+input:not([type="image"]), textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+label,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+}
+input[type=checkbox], input[type=radio] {
+  cursor: pointer;
+  margin-bottom: 0;
+}
+input[type=text],
+input[type=password],
+textarea,
+select {
+  display: inline-block;
+  width: 210px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  height: 18px;
+  color: #808080;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+select, input[type=file] {
+  height: 27px;
+  line-height: 27px;
+}
+textarea {
+  height: auto;
+}
+
+/* grey out placeholders */
+:-moz-placeholder {
+  color: #bfbfbf;
+}
+::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+input[type=text],
+input[type=password],
+select,
+textarea {
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(82, 168, 236, 0.8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+/* buttons */
+button {
+  display: inline-block;
+  padding: 4px 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #0064cd;
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
+  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
+  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
+  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
+  background-image: linear-gradient(top, #049cdb, #0064cd);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #004b9a;
+  border-bottom-color: #003f81;
+  -webkit-transition: 0.1s linear all;
+  -moz-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-color: #0064cd #0064cd #003f81;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+button:hover {
+  color: #fff;
+  background-position: 0 -15px;
+  text-decoration: none;
+}
+button:active {
+  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* CSS stylesheet is based on Kevin Burke's Markdown.css project (http://kevinburke.bitbucket.org/markdowncss) */
+</style>
+</head>
+<body>
+<h1>Travis CI ( Continuous Integration ) Learning</h1>
+
+<p>demo仓库地址：https://github.com/dumganhar/learn-travis
+demo travis-ci地址：https://travis-ci.org/dumganhar/learn-travis</p>
+
+<h2>Travis CI 的优缺点</h2>
+
+<h3>优点</h3>
+
+<ul>
+<li>小清新: 配置简单</li>
+</ul>
+
+<p>```yaml
+language: cpp
+env:
+  matrix:
+  - PLATFORM=linux DEBUG=1</p>
+
+<p>script:
+  - $CXX helloworld.cpp -o helloworld
+  - ./helloworld</p>
+
+<p>before_install:</p>
+
+<p>compiler:
+  - clang
+  - gcc
+```</p>
+
+<ul>
+<li>和Github非常暧昧:)</li>
+<li>提供免费的服务器</li>
+<li>网络速度非常快，平均10m/s以上</li>
+<li>每次的构建都是干净的，排除历史构建的干扰
+<ul>
+<li><strong>其他ci(Jenkins)</strong>都是在历史的基础上pull最新代码</li>
+<li>动态分配VM,使用完删除</li>
+</ul></li>
+<li>支持的语言很多: C, C++, Clojure, Erlang, Go, Groovy, Haskell, Java, Javascript(with
+Node.js), Objective-C, Perl, PHP, Python, Ruby, Scala
+<ul>
+<li>这些支持的语言是指默认在Host机器上安装好了<code>开发环境</code>，其实没有安装也是可以进行构建的，cocos2d-x
+的android环境就是人为配置的，需要下载对应的ndk, 其实直接把travis当成一个正常的ubuntu和osx机器使用
+也是没任何问题的。</li>
+</ul></li>
+</ul>
+
+<h3>缺点</h3>
+
+<ul>
+<li>Windows被鄙视，O(∩_∩)O哈哈~</li>
+<li>虽然编译环境支持<code>OSX</code>和<code>Ubuntu</code>,但是一次构建不同任务无法分别使用不同的平台，<code>OSX</code>和<code>Ubuntu</code>二者选一
+<code>Travis-CI</code>是根据language选择对应的host，除了<code>objective-c</code>是用<code>OSX</code>，其他都是用<code>Ubuntu</code>作为Host</li>
+</ul>
+
+<h2>CI 环境变量</h2>
+
+<ul>
+<li><code>CI=true</code></li>
+<li><code>TRAVIS=true</code></li>
+<li><code>DEBIAN_FRONTEND=noninteractive</code></li>
+<li><code>HAS_JOSH_K_SEAL_OF_APPROVAL=true</code></li>
+<li><code>USER=travis (do not depend on this value)</code></li>
+<li><code>HOME=/home/travis (do not depend on this value)</code></li>
+<li><code>LANG=en_US.UTF-8</code></li>
+<li><code>LC_ALL=en_US.UTF-8</code></li>
+<li><code>RAILS_ENV=test</code></li>
+<li><code>RACK_ENV=test</code></li>
+<li><code>MERB_ENV=test</code></li>
+<li><code>JRUBY_OPTS="--server -Dcext.enabled=false -Xcompile.invokedynamic=false"</code></li>
+</ul>
+
+<p>Additionally, Travis sets environment variables you can use in your build, e.g. to tag the build, or to run post-build deployments.</p>
+
+<ul>
+<li><code>TRAVIS_BRANCH</code>: 当前构建分支名称</li>
+<li><code>TRAVIS_BUILD_DIR</code>: 仓库在构建host机器上的绝对路径</li>
+<li><code>TRAVIS_BUILD_ID</code>: Travis内部使用的当前构建的唯一ID</li>
+<li><code>TRAVIS_BUILD_NUMBER</code>: 当前构建号 e.g. 2</li>
+<li><code>TRAVIS_COMMIT</code>: 当前构建commit的SHA-1</li>
+<li><code>TRAVIS_COMMIT_RANGE</code>: 当前构建的commit范围</li>
+<li><code>TRAVIS_JOB_ID</code>: travis内部使用的当前任务ID</li>
+<li><code>TRAVIS_JOB_NUMBER</code>: 当前任务编号 e.g. 2.1</li>
+<li><code>TRAVIS_PULL_REQUEST</code>: 若是PullRequest触发的构建，则为Pull Request编号，否则为false</li>
+<li><code>TRAVIS_SECURE_ENV_VARS</code>: 值为true或者false, 是否用到了加密变量</li>
+<li><code>TRAVIS_REPO_SLUG</code>: 当前仓库，格式为owner<em>name/repo</em>name</li>
+</ul>
+
+<p>语言相关的变量</p>
+
+<ul>
+<li><code>TRAVIS_RUBY_VERSION</code></li>
+<li><code>TRAVIS_JDK_VERSION</code></li>
+<li><code>TRAVIS_NODE_VERSION</code></li>
+<li><code>TRAVIS_PHP_VERSION</code></li>
+<li><code>TRAVIS_PYTHON_VERSION</code></li>
+</ul>
+
+<h2>使用apt安装软件依赖</h2>
+
+<p>sudo apt-get install -qq</p>
+
+<h2>如何让github上面的项目支持travis-ci持续集成</h2>
+
+<ul>
+<li>用github账户登陆 <a href="https://travis-ci.org">Travis-CI</a>, 授权travis-ci访问github仓库</li>
+<li>Accounts --> Repositories --> 开启需要支持travis-ci的仓库</li>
+<li>编写.travis.yml文件，放置项目根目录</li>
+</ul>
+
+<h2>C 工程的CI 环境</h2>
+
+<p><code>
+Travis VMs are 64 bit and currently provide
+gcc 4.6
+clang 3.1
+core GNU build toolchain (autotools, make), cmake, scons
+</code></p>
+
+<h2>如何编写.travis.yml</h2>
+
+<p>参考 <a href="http://about.travis-ci.org/docs/user/build-configuration/">Configuring your Travis CI build with .travis.yml</a></p>
+
+<ul>
+<li>构建生命周期
+<ul>
+<li>切换到当前语言的<em>运行时</em>(比如Ruby 1.9.3 or CPP)</li>
+<li>clone 整个项目，包含更新子模块(无法在clone前执行用户script)</li>
+<li>执行<strong>before<em>install</strong>脚本(若存在)</li>
+<li>进入clone好的仓库目录，执行对应的安装命令（若无指定，命令依赖于当前语言）</li>
+<li>执行<strong>before</em>script</strong>脚本(若存在)</li>
+<li>执行并测试<strong>script</strong>命令（若无指定，则依赖当前语言），exit code为0表示成功，反之失败</li>
+<li>执行<strong>after<em>success/after</em>failure</strong>脚本(若存在)</li>
+<li>执行<strong>after_script</strong>脚本(若存在)</li>
+</ul></li>
+</ul>
+
+<p>构建结果被放置在<code>TRAVIS_TEST_RESULT</code>变量中，可用在<strong>after_script</strong>脚本中</p>
+
+<h3>YAML 语法</h3>
+
+<p>```yaml
+before<em>script:
+  - before</em>command<em>1
+  - before</em>command<em>2
+  - sh -c "if [ '$DB' = 'pgsql' ]; then psql -c 'DROP DATABASE IF EXISTS doctrine</em>tests;' -U postgres; fi"
+after<em>script:
+  - after</em>command<em>1
+  - after</em>command_2</p>
+
+<p>before_install:</p>
+
+<p>install: sudo apt-get install -qq 软件包名
+```</p>
+
+<h3>设置环境变量</h3>
+
+<p><code>yaml
+rvm:
+  - 1.9.3
+  - rbx-18mode
+env:
+  - FOO=foo BAR=bar
+  - FOO=bar BAR=foo
+</code>
+将触发四个构建:
+<code>text
+Ruby 1.9.3 with FOO=foo and BAR=bar
+Ruby 1.9.3 with FOO=bar and BAR=foo
+Rubinius in 1.8 mode with FOO=foo and BAR=bar
+Rubinius in 1.8 mode with FOO=bar and BAR=foo
+</code></p>
+
+<h3>超时</h3>
+
+<ul>
+<li>构建在50分钟后还继续运行</li>
+<li>10分钟内没有任何log输出</li>
+</ul>
+
+<h3>构建分支</h3>
+
+<p>当有push或者PR时，默认为所有分支（除了<code>gh-pages</code>）执行构建操作
+当然这也是可以定制的:
+```yaml
+黑名单
+branches:
+  except:
+    - legacy
+    - experimental</p>
+
+<p>白名单
+branches:
+  only:
+    - master
+    - stable
+```</p>
+
+<p>只能指定<code>黑名单</code>或<code>白名单</code>，若两个都指定，<code>except</code>将被忽略</p>
+
+<p>支持正则表达式:
+<code>yaml
+branches:
+  only:
+    - master
+    - /^deploy-.*$/
+</code></p>
+
+<h3>构建环境、matrix配置</h3>
+
+<p><code>yaml
+env:
+  matrix:
+  - GEN_JSB=YES
+  - PLATFORM=linux DEBUG=1
+</code>
+执行多少构建?</p>
+
+<h3>可以用travis-lint检查对应的配置是否合法</h3>
+
+<p>目前还比较简陋。检查功能不强</p>
+
+<h3>覆盖默认的脚本命令</h3>
+
+<ul>
+<li><p>cpp工程默认编译命令：<code>./configure &amp;&amp; make &amp;&amp; make test</code>，
+可以使用<code>script</code>字段覆盖默认命令</p></li>
+<li><p>cpp工程默认导出两个环境变量：<code>CXX</code>和<code>CC</code>，他们的值由使用的编译器决定
+```yaml
+compiler:</p>
+
+<ul>
+<li>clang</li>
+<li>gcc
+```</li>
+</ul></li>
+</ul>
+
+<h2>构建完成后发送通知</h2>
+
+<p><code>Travis CI</code> 能通过<code>email</code>,<code>IRC</code>, <code>Campfire</code>, <code>Flowdock</code>, <code>HipChat</code>
+和<code>webhooks</code>来发送构建结果的通知</p>
+
+<h3>email通知</h3>
+
+<p>他默认发送email给</p>
+
+<ul>
+<li>添加新commit的作者</li>
+<li>这个仓库的所有者</li>
+</ul>
+
+<p>可以完全关闭email通知</p>
+
+<p><code>yaml
+notifications:
+  email: false
+</code></p>
+
+<p>也可以定制发送email地址和条件(Success or Faiure)</p>
+
+<p><code>yaml
+notifications:
+  email:
+    recipients:
+      - one@example.com
+      - other@example.com
+    on_success: [always|never|change] # default: change
+    on_failure: [always|never|change] # default: always
+</code>
+<code>always</code>: 每次构建成功(或失败)的时候发送通知
+<code>never</code> : 每次构建成功(或失败)都不发送通知
+<code>change</code>: 当编译状态改变的时候发送通知，success -> failure 或者 failure -> success</p>
+
+<h2>加密重要数据</h2>
+
+<h3>Cocos2d-x 中使用的加密</h3>
+
+<ul>
+<li><code>Cocos2d-x</code> <code>travis-ci</code>含有三组加密数据，分别是GH<em>USER, GH</em>PASSWORD, GH_EMAIL
+他们是<code>CocosRobot</code>的账户、密码和邮件
+<ul>
+<li>用于<code>bindings-generator</code>生成的新jsbindings glue代码产生变化的时候<em>push</em>
+到 <a href="https://github.com/folecr/cocos2dx-autogen-bindings">auto-gen-jsb-repo</a></li>
+<li><code>CocosRobot</code>向<code>cocos2d-x</code>发送<code>jsbindings</code>自动绑定代码的<code>Pull Request</code></li>
+</ul></li>
+</ul>
+
+<h3>How to ?</h3>
+
+<p><code>sh
+gem install travis
+travis encrypt github用户名/仓库名称 "GH_USER=xxx GH_PASSWORD=xxx"
+</code></p>
+
+<p>Then you need to add them as ENV variable in .travis.yml:</p>
+
+<p><code>yaml
+env:
+  global:
+    - secure: ".... encrypted string here ....."
+</code></p>
+
+<p>And use them in your script:</p>
+
+<p><code>sh
+export REPO="$(pwd | sed s,^/home/travis/builds/,,g)"
+ssh -o StrictHostKeyChecking=no
+if [ "$TRAVIS_BRANCH" == "travis" ]; then
+    git branch -D gh-pages
+    git checkout -B gh-pages
+    git add -f dist/.
+    git commit -m "Add built output"
+    git push https://$(GH_USER):$(GH_PASSWORD)@github.com/${REPO} gh-pages
+fi
+</code></p>
+
+<p>题外话：如何通过命令行发送Pull Request
+<code>sh
+curl --user "${GH_USER}:${GH_PASSWORD}" --request POST --data "{ \"title\": \"$COMMITTAG : updating submodule reference to latest autogenerated bindings\", \"body\": \"\", \"head\": \"${GH_USER}:${COCOS_BRANCH}\", \"base\": \"${TRAVIS_BRANCH}\"}" https://api.github.com/repos/cocos2d/cocos2d-x/pulls 2&gt; /dev/null &gt; /dev/null
+</code></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
