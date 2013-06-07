@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>index</title>
+<title>python_c_module</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 /* GitHub stylesheet for MarkdownPad */
@@ -274,15 +274,76 @@ table tr:nth-child(2n) {
 
 </head>
 <body>
-<h1>Learning Python Overview</h1>
-<ol>
-<li><a href="Python.doc">Python简述</a></li>
-<li><a href="Python_basic.doc">Python基本概念</a></li>
-<li><a href="Python_basic2.doc">Python基本概念-函数</a></li>
-<li><a href="python_module.html">Python第三方模块</a></li>
-<li><a href="python_c_module.html">Python的c扩展</a></li>
-</ol>
-
+<h1>Python扩展</h1>
+<p><strong>扩展的定义：</strong>一般来说，所有能被整合或导入到其他python脚本的代码，都可以称为扩展。</p>
+<p><strong>为什么要扩展：</strong></p>
+<ul>
+<li>添加/额外的（非python）功能</li>
+<li>性能瓶颈的效率提升</li>
+<li>保持专有源代码私密</li>
+</ul>
+<p><strong>创建Python扩展</strong></p>
+<ul>
+<li>创建应用程序代码</li>
+<li>利用样板来包装代码</li>
+<li>编译与测试</li>
+</ul>
+<table>
+><tr>
+<td>函 数</td>
+><td>描 述</td>
+</tr>
+><tr>
+<td>Python到c</td>
+><td></td>
+</tr>
+>><tr>
+<td>int PyArgTuple()</td>
+><td>把Python传过来的参数转为c</td>
+</tr>
+></tr>
+>><tr>
+<td>c到python</td>
+><td></td>
+</tr>
+>>><tr>
+<td>PyObject* Py_BuildValue()</td>
+><td>把c的数据转为Python的一个或一组对象，然后返回</td>
+</tr>
+></table>
+<p><strong>Python和c之间的数据转换的通用代码</strong></p>
+<table>
+<tr>
+<td>格式代码</td>
+<td>Python类型</td>
+<td>c类型</td>
+</tr>
+<tr>
+<td>s</td>
+<td>str</td>
+<td>char指针</td>
+</tr>
+<tr>
+<td>i</td>
+<td>int</td>
+<td>int</td>
+</tr>
+<tr>
+<td>l</td>
+<td>long</td>
+<td>long</td>
+</tr>
+<tr>
+<td>c</td>
+<td>str</td>
+<td>char</td>
+</tr>
+<tr>
+<td>d</td>
+<td>float</td>
+<td>double</td>
+</tr>
+</table>
 </body>
 </html>
 <!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
