@@ -2,7 +2,7 @@
 ## 相关资源
 
 1. 示例代码使用Eclipse环境为Android平台编写，其中使用了PVRTools的源码，需要Android4.1以上版本的SDK来编译。
-	* 示例代码仓库：__https://github.com/IdVincentYang/OpenGL_ES2_Samples.git__
+	* 示例代码仓库：__https://github.com/IdVincentYang/OpenGL\_ES2\_Samples.git__
     	* 使用__File->Import...->Android->Import Android Project From existing Source...__
         * 设置__SampleFundation__为库工程，每个示例工程需要依赖SampleFundation
         * 工程C++代码有的依赖__PowerVR__的库来载入纹理，请尽量使用__X86__模拟器来运行，如果要真机运行，需要硬件支持PowerVR纹理。
