@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Plugin-x 结构与实现</title>
+
+</head>
+<body>
+<h1>Plugin-x 结构与实现</h1>
+
+<h2>目录</h2>
+
+<ul>
+<li><a href="#ach1">Plugin-x 简介</a></li>
+<li><a href="#ach2">Plugin-x 的结构</a></li>
+<li><a href="#ach3">Plugin-x 的实现</a>
+
+<ul>
+<li><a href="#ach3.1">反射机制</a></li>
+<li><a href="#ach3.2">插件加载流程的改动</a></li>
+</ul>
+</li>
+<li><a href="#ach4">插件的使用演示</a></li>
+</ul>
+
+
+<h2><a id="ach1"></a>Plugin-x 简介</h2>
+
+<p>Plugin-x 是为了方便游戏开发使用各种第三方 SDK 的一个 C++ 框架。在这个框架下面，可以很方便的将第三方 SDK 封装为一个插件(plugin)；而游戏开发者，也可以很方便的使用各种功能的插件(plugin)。</p>
+
+<p>Plugin-x 主要完成的工作就是为各种第三方 SDK 功能封装出 C++ 接口，这样在游戏逻辑代码中就可以直接调用插件提供的扩展功能了。</p>
+
+<h2><a id="ach2"></a>Plugin-x 的结构</h2>
+
+<p>Plugin-x 的结构需要满足以下几个需求：</p>
+
+<ul>
+<li>方便游戏开发者：
+
+<ul>
+<li>对于有类似功能的插件，游戏开发者可以方便切换插件。</li>
+<li>对于某些插件 SDK 提供的一些附加功能接口，游戏开发者也可以方便的调用。</li>
+</ul>
+</li>
+<li>方便插件开发者
+
+<ul>
+<li>能够方便的封装 SDK 的附加功能接口。</li>
+<li>开发插件时尽量减少 C++ 代码。</li>
+</ul>
+</li>
+</ul>
+
+
+<p><img src="./framework.jpg" alt="Plugin-x 的结构图" /></p>
+
+<h2><a id="ach3"></a>Plugin-x 的实现</h2>
+
+<p>实际上在 Plugin-x 重构前，已经能够满足前面提到的大部分需求。但是在之前的框架下面，每个插件都必须要编写 C++ 代码，同时，还要完成 C++ 代码与 Java/OC 代码之间的交互。</p>
+
+<p>所以这次进行重构的目标就是让每个插件都不用再编写 C++ 代码。这样能带来两个好处：</p>
+
+<ul>
+<li>插件开发者不需要编写 C++ 代码以及与 Java/OC 代码的交互代码。</li>
+<li>游戏开发者使用插件时，不需要链接插件的 C++ 代码库。</li>
+</ul>
+
+
+<p>为了把插件中的 C++ 代码摆脱掉，同时游戏又可以调用插件自定义的接口，就需要在 Plugin-x 的框架中实现简单的反射机制。</p>
+
+<h3><a id="ach3.1"></a>反射机制</h3>
+
+<p>Plugin-x 中使用到的只是简单的反射功能：通过函数名调用函数。</p>
+
+<ol>
+<li><p>C++ 层接口设计：</p>
+
+<ul>
+<li>参数<br/>
+接口设计为可变参数，并新增类型 PluginParam 对一些简单的参数类型进行封装。</li>
+<li>返回值<br/>
+由于实际的返回值是从 Java/OC 中返回的，所以目前只支持了一些基本类型的返回值（std::string, int, bool, float, void）</li>
+</ul>
+
+
+<p> <pre><code class="c">
+ void callFuncWithParam(const char<em> funcName, PluginParam</em> param, ...);
+ std::string callStringFuncWithParam(const char<em> funcName, PluginParam</em> param, ...);
+ int callIntFuncWithParam(const char<em> funcName, PluginParam</em> param, ...);
+ bool callBoolFuncWithParam(const char<em> funcName, PluginParam</em> param, ...);
+ float callFloatFuncWithParam(const char<em> funcName, PluginParam</em> param, ...);
+ </code></pre></p></li>
+<li><p>插件自定义接口的限制：</p>
+
+<ul>
+<li>对于2个以及2个以上参数的接口，在实现时，接收到的会是一个映射类型的参数。接口实际需要的参数通过 key 来获取，key 的值为 Param1，Param2…ParamN。</li>
+<li>因为 OC 中的反射机制传递的参数只能为 id 类型，所以在 ios 上插件自定义接口的参数必须为 id 类型。</li>
+</ul>
+
+
+<p> <pre><code>
+ - (void) setGender: (NSNumber*) gender;
+ - (void) setUserId: (NSString*) userId;
+ - (void) logTimedEventBeginWithParams: (NSMutableDictionary*) params;
+ </code></pre></p></li>
+</ol>
+
+
+<h3><a id="ach3.2"></a>插件加载流程的改动</h3>
+
+<p>在重构前的框架下，每个插件通过 static 变量最早初始化的特性实现了插件的自动注册功能。</p>
+
+<p>而删除掉插件的 C++ 代码之后，自动注册的功能没法继续使用。插件的加载流程也有相应的改动：约定插件名称与实际的类名相同。</p>
+
+<h2><a id="ach4"></a>插件的使用演示</h2>
+</body>
+</html>
