@@ -1,215 +1,99 @@
 <!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<style>
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
-    background-color: white;
-    margin: 10px 13px 10px 13px;
-}
-table {
-	margin: 10px 0 15px 0;
-	border-collapse: collapse;
-}
-td,th {	
-	border: 1px solid #ddd;
-	padding: 3px 10px;
-}
-th {
-	padding: 5px 10px;	
-}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-a {
-    color: #0069d6;
-}
-a:hover {
-    color: #0050a3;
-    text-decoration: none;
-}
-a img {
-    border: none;
-}
-p {
-    margin-bottom: 9px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    line-height: 36px;
-}
-h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
-}
-h2 {
-    font-size: 24px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
-}
-hr {
-    margin: 0 0 19px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-}
-blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
-}
-blockquote:before {
-    content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
-}
-blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
-}
-code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
-}
-code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-pre code {
-    background-color: #fff;
-    color:#737373;
-    font-size: 11px;
-    padding: 0;
-}
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
-}
-* {
-	-webkit-print-color-adjust: exact;
-}
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:10px auto;
-    }
-}
-@media print {
-	body,code,pre code,h1,h2,h3,h4,h5,h6 {
-		color: black;
-	}
-	table, pre {
-		page-break-inside: avoid;
-	}
-}
-</style>
-<title>关于本网站</title>
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Learning</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
 </head>
+
 <body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Learning</h1>
+    </header>
+    <div id="container">
+      <p class="tagline"></p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/yangws/learning/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/yangws/learning/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/yangws/learning" class="code">View Learning on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+
 <h1>关于本网站</h1>
 
 <ul>
 <li>此网站使用<a href="http://github.github.com/github-flavored-markdown/">GitHub Flavored Markdown</a>来编写（除具体内容之外）.</li>
 <li>可以通过以下git命令得到所有的页面:</li>
 </ul>
-
-
-<pre><code>    $ git clone https://github.com/yangws/learning.git
-    $ git checkout -b gh-pages origin/gh-pages
+<pre><code>$ git clone https://github.com/yangws/learning.git
+$ git checkout -b gh-pages origin/gh-pages
 </code></pre>
 
 <h1>主题列表</h1>
 
-<h2>当前主题</h2>
-
 <ol>
-<li><a href="OpenGL_ES_2.0/index.html">OpenGL ES 2.0</a> ------ Authored by Wensheng Yang (@yangws)</li>
-<li><a href="Shell/index.html">Shell Programing</a> ------ Authored by Hexuan Li (@lihe757)</li>
-<li><a href="Python/index.html">Python Programing</a> ------ Authored by Hujiang (@hujiang)</li>
-<li><a href="AndroidDev/index.html">Android Development</a> ------ Authored by Honghui Zhang (@honghui)</li>
-<li><a href="Ant/index.html">Apache Ant</a> ------ Authored by Zhang Bin (@zhangbin)</li>
-<li><a href="ServerPrograming/index.html">服务端的方方面面</a> ------ Authored by Zhidao Hong (@fathong)</li>
-<li><a href="CocosBuilder/CocosBuilderLearning.html">Cocosbuilder3.0使用分享</a> ------ Authored by Jianhua Chen (@dumganhar)</li>
-<li><a href="IntroducingXMPP/index.html">Introducing XMPP</a> ------ Authored by Jiusheng Lei (@heliclei)</li>
-<li><a href="travis-ci/Learn-travis-ci.html">travis-ci持续集成</a> ------ Authored by Jianhua Chen (@dumganhar)</li>
-<li><a href="DevGameByCocos2d/index.html">用Cocos2d做游戏</a> ------ Authored by Wuhao (@Wu-Hao)</li>
-<li><a href="XMLParser/training.zip">XML解析器实现原理(VC示例源码)</a> ------ Authored by Jiusheng Lei (@heliclei)</li>
+<li>
+<a href="OpenGL_ES_2.0/index.html">OpenGL ES 2.0</a> ------ Authored by Wensheng Yang (<a href="https://github.com/yangws" class="user-mention">@yangws</a>)</li>
+<li>
+<a href="Shell/index.html">Shell Programing</a> ------ Authored by Hexuan Li (<a href="https://github.com/lihe757" class="user-mention">@lihe757</a>)</li>
+<li>
+<a href="Python/index.html">Python Programing</a> ------ Authored by Hujiang (<a href="https://github.com/hujiang" class="user-mention">@hujiang</a>)</li>
+<li><a href="AndroidDev/index.html">Android Development</a> ------ Authored by Honghui Zhang (<a href="https://github.com/honghui" class="user-mention">@honghui</a>)</li>
+<li>
+<a href="Ant/index.html">Apache Ant</a> ------ Authored by Zhang Bin (<a href="https://github.com/natural-law" class="user-mention">@zhangbin</a>)</li>
+<li>
+<li><a href="ServerPrograming/index.html">服务端的方方面面</a> ------ Authored by Zhidao Hong (<a href="https://github.com/fathong" class="user-mention">@fathong</a>)</li>
+<li><a href="CocosBuilder/CocosBuilderLearning.html">Cocosbuilder3.0使用分享</a> ------ Authored by Jianhua Chen (<a href="https://github.com/dumganhar" class="user-mention">@dumganhar</a>)</li>
+<li><a href="IntroducingXMPP/index.html">Introducing XMPP</a> ------ Authored by Jiusheng Lei (<a href="https://github.com/heliclei" class="user-mention">@heliclei</a>)</li>
+<li><a href="travis-ci/Learn-travis-ci.html">travis-ci持续集成</a> ------ Authored by Jianhua Chen (<a href="https://github.com/dumganhar" class="user-mention">@dumganhar</a>)</li>
+<li><a href="DevGameByCocos2d/index.html">用Cocos2d做游戏</a> ------ Authored by Wuhao (<a href="https://github.com/Wu-Hao" class="user-mention">@Wu-Hao</a>)</li>
+<li><a href="XMLParser/training.zip">XML解析器实现原理(VC示例源码)</a> ------ Authored by Jiusheng Lei (<a href="https://github.com/heliclei" class="user-mention">@heliclei</a>)</li>
+<li><a href="Plugin-x/index.html">Plugin-x 结构与实现</a> ------ Authored by Zhang Bin (<a href="https://github.com/natural-law" class="user-mention">@zhangbin</a>)</li>
 <li><a href="C++11/index.html">C++ 11 Features</a></li>
 <li><a href="http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/">Google 开源C++项目风格指南</a></li>
-<li><a href="Plugin-x/index.html">Plugin-x 结构与实现</a> ------ Authored by Zhang Bin (@zhangbin)</li>
 </ol>
 
+<ul>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0ApdZ593X8vw3dHoyYVVmZmlaOEhXZG9TOVNzNFdhZXc&amp;usp=sharing">大家感兴趣的主题统计</a></li>
+</ul>
 
-<h2>感兴趣的主题统计</h2>
-
-<p><a href="https://docs.google.com/spreadsheet/ccc?key=0ApdZ593X8vw3dHoyYVVmZmlaOEhXZG9TOVNzNFdhZXc&amp;usp=sharing">大家感兴趣的主题统计</a></p>
 
 <h1>时间安排</h1>
-
 <iframe src="https://www.google.com/calendar/embed?src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&ctz=Asia/Shanghai" style="border: 0" width="800" height="400" frameborder="0" scrolling="no"></iframe>
-
-
 <ul>
 <li>日历网址:
 
 <ul>
-<li><strong>xml</strong>: https://www.google.com/calendar/feeds/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic</li>
-<li><strong>ical</strong>: https://www.google.com/calendar/ical/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic.ics</li>
-<li><strong>html</strong>: https://www.google.com/calendar/embed?src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&amp;ctz=Asia/Shanghai</li>
+<li>
+<strong>xml</strong>: <a href="https://www.google.com/calendar/feeds/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic">https://www.google.com/calendar/feeds/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic</a>
+</li>
+<li>
+<strong>ical</strong>: <a href="https://www.google.com/calendar/ical/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic.ics">https://www.google.com/calendar/ical/7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com/public/basic.ics</a>
+</li>
+<li>
+<strong>html</strong>: <a href="https://www.google.com/calendar/embed?src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&amp;ctz=Asia/Shanghai">https://www.google.com/calendar/embed?src=7fmv9unrfqnm4knpl71qbjdqvo%40group.calendar.google.com&amp;ctz=Asia/Shanghai</a>
+</li>
 </ul>
 </li>
 </ul>
-
 
 <h1>如何编写页面?</h1>
 
@@ -217,6 +101,27 @@ sup {
 <li>在Window平台可以用<a href="http://markdownpad.com/">MarkdownPad</a>来编写md文件，然后输出为HTML格式。</li>
 <li>在Mac平台可以使用 <a href="http://mouapp.com/">Mou</a>来编写md文件，然后输出为 HTML 格式。</li>
 </ul>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/yangws" class="avatar"><img src="https://secure.gravatar.com/avatar/e6f6d3ab4479bbe81cb7fd6cf980855a?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="48" height="48"/></a> <a href="https://github.com/yangws">yangws</a> maintains <a href="https://github.com/yangws/learning">Learning</a></p>
 
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/yangws/learning/tarball/master" class="tar">tar</a><a href="https://github.com/yangws/learning/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
 </body>
 </html>
+

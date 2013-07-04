@@ -21,9 +21,9 @@
 9. [travis-ci持续集成](travis-ci/Learn-travis-ci.html) ------ Authored by Jianhua Chen (@dumganhar)
 10. [用Cocos2d做游戏](DevGameByCocos2d/index.html) ------ Authored by Wuhao (@Wu-Hao)
 11. [XML解析器实现原理(VC示例源码)](XMLParser/training.zip) ------ Authored by Jiusheng Lei (@heliclei)
-12. [C++ 11 Features](C++11/index.html)
-13. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
-14. [Plugin-x 结构与实现](Plugin-x/index.html) ------ Authored by Zhang Bin (@zhangbin)
+12. [Plugin-x 结构与实现](Plugin-x/index.html) ------ Authored by Zhang Bin (@zhangbin)
+98. [C++ 11 Features](C++11/index.html)
+99. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
 ## 感兴趣的主题统计
 [大家感兴趣的主题统计](https://docs.google.com/spreadsheet/ccc?key=0ApdZ593X8vw3dHoyYVVmZmlaOEhXZG9TOVNzNFdhZXc&usp=sharing)
