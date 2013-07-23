@@ -8,20 +8,23 @@
     $ git checkout -b gh-pages origin/gh-pages
 ```
 
+# 经讨论过的语言规范（以GoogleCodeStyle为模板）
+* [Python 风格指南](http://yangws.github.io/zh-google-styleguide/google-python-styleguide/contents.html)
+
 # 主题列表
 ## 当前主题
-1. [OpenGL ES 2.0](OpenGL_ES_2.0/index.html) ------ Authored by Wensheng Yang (@yangws)
-2. [Shell Programing](Shell/index.html) ------ Authored by Hexuan Li (@lihe757)
-3. [Python Programing](Python/index.html) ------ Authored by Hujiang (@hujiang)
-4. [Android Development](AndroidDev/index.html) ------ Authored by Honghui Zhang (@honghui)
-5. [Apache Ant](Ant/index.html) ------ Authored by Zhang Bin (@zhangbin)
-6. [服务端的方方面面](ServerPrograming/index.html) ------ Authored by Zhidao Hong (@fathong)
-7. [Cocosbuilder3.0使用分享](CocosBuilder/CocosBuilderLearning.html) ------ Authored by Jianhua Chen (@dumganhar)
-8. [Introducing XMPP](IntroducingXMPP/index.html) ------ Authored by Jiusheng Lei (@heliclei)
-9. [travis-ci持续集成](travis-ci/Learn-travis-ci.html) ------ Authored by Jianhua Chen (@dumganhar)
-10. [用Cocos2d做游戏](DevGameByCocos2d/index.html) ------ Authored by Wuhao (@Wu-Hao)
-11. [XML解析器实现原理(VC示例源码)](XMLParser/training.zip) ------ Authored by Jiusheng Lei (@heliclei)
-12. [Plugin-x 结构与实现](Plugin-x/index.html) ------ Authored by Zhang Bin (@zhangbin)
+1. [OpenGL ES 2.0](OpenGL_ES_2.0/index.html) ------ Authored by [Wensheng Yang](http://yangws.github.io/)
+2. [Shell Programing](Shell/index.html) ------ Authored by [Hexuan Li](https://github.com/lihe757)
+3. [Python Programing](Python/index.html) ------ Authored by [Hujiang](https://github.com/hujiang)
+4. [Android Development](AndroidDev/index.html) ------ Authored by [Honghui Zhang](https://github.com/honghui)
+5. [Apache Ant](Ant/index.html) ------ Authored by [Zhang Bin](https://github.com/natural-law)
+6. [服务端的方方面面](ServerPrograming/index.html) ------ Authored by [Zhidao Hong](https://github.com/fathong)
+7. [Cocosbuilder3.0使用分享](CocosBuilder/CocosBuilderLearning.html) ------ Authored by [Jianhua Chen](https://github.com/dumganhar)
+8. [Introducing XMPP](IntroducingXMPP/index.html) ------ Authored by [Jiusheng Lei](https://github.com/heliclei)
+9. [travis-ci持续集成](travis-ci/Learn-travis-ci.html) ------ Authored by [Jianhua Chen](https://github.com/dumganhar)
+10. [用Cocos2d做游戏](DevGameByCocos2d/index.html) ------ Authored by [Wuhao](https://github.com/Wu-Hao)
+11. [XML解析器实现原理(VC示例源码)](XMLParser/training.zip) ------ Authored by [Jiusheng Lei](https://github.com/heliclei)
+12. [Plugin-x 结构与实现](Plugin-x/index.html) ------ Authored by [Zhang Bin](https://github.com/natural-law)
 13. [UI、UE设计系列](UI_UE_Design/index.html) ------ Authored by [Xiaoyang Hong](http://portfolio-biubiu.lofter.com/)
 14. [Flash介绍](Flash/AS.html) ------ Authored by [Shujun Qiao](https://github.com/shujunqiao)
 98. [C++ 11 Features](C++11/index.html)
