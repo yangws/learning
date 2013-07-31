@@ -1,4 +1,4 @@
-# 关于本网站
+﻿# 关于本网站
 
 * 此网站使用[GitHub Flavored Markdown](http://github.github.com/github-flavored-markdown/)来编写（除具体内容之外）.
 * 可以通过以下git命令得到所有的页面:
@@ -27,7 +27,8 @@
 12. [Plugin-x 结构与实现](Plugin-x/index.html) ------ Authored by [Zhang Bin](https://github.com/natural-law)
 13. [UI、UE设计系列](UI_UE_Design/index.html) ------ Authored by [Xiaoyang Hong](http://portfolio-biubiu.lofter.com/)
 14. [Flash介绍](Flash/AS.html) ------ Authored by [Shujun Qiao](https://github.com/shujunqiao)
-15. [C++设计模式](DesignPatten/index.html) ------ Authored by [Chuanwei Zhang](https://github.com/chuanweizhang)
+15. [HTML5功能概述](HTML5/index.html) ------ Authored by [Dingping Lv](https://github.com/dingpinglv)
+16. [C++设计模式](DesignPatten/index.html) ------ Authored by [Chuanwei Zhang](https://github.com/chuanweizhang)
 98. [C++ 11 Features](C++11/index.html)
 99. [Google 开源C++项目风格指南](http://zh-google-styleguide.readthedocs.org/en/latest/google-cpp-styleguide/)
 
